@@ -23,3 +23,40 @@ map [fullscreen] J zoom out
 map [fullscreen] i recolor
 map [fullscreen] p print
 map [fullscreen] g goto top
+
+set font                        "Mononoki Nerd Font 12"
+
+set default-bg "#282c34" #00
+set default-fg "#abb2bf" #01
+
+set statusbar-fg "#abb2bf" #04
+set statusbar-bg "#282c34" #01
+
+set inputbar-bg "#282c34" #00
+set inputbar-fg "#abb2bf" #02
+
+set notification-error-bg "#AC4142" #08
+set notification-error-fg "#151515" #00
+
+set notification-warning-bg "#be5046" #08
+set notification-warning-fg "#abb2bf" #00
+
+set highlight-color "#abb2bf" #0A
+set highlight-active-color "#d19a66" #0D
+
+set completion-highlight-fg "#151515" #02
+set completion-highlight-bg "#90A959" #0C
+
+set completion-bg "#303030" #02
+set completion-fg "#E0E0E0" #0C
+
+set notification-bg "#d19a66" #0B
+set notification-fg "#282c34" #00
+
+# set recolor "true"
+set recolor-lightcolor "#282c34" #00
+set recolor-darkcolor "#abb2bf" #06
+
+set recolor-keephue             "false"
+
+set selection-clipboard clipboard
