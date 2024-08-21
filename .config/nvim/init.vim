@@ -1,4 +1,6 @@
 let mapleader =","
+let g:airline_theme='onedark'
+
 
 if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim"'))
 	echo "Downloading junegunn/vim-plug to manage plugins..."
@@ -7,31 +9,83 @@ if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autolo
 	autocmd VimEnter * PlugInstall
 endif
 
-map ,, :keepp /<++><CR>ca<
-imap ,, <esc>:keepp /<++><CR>ca<
 
-call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
-Plug 'tpope/vim-surround'
+cal plug#begin('~/local/share/nvim/plugged')
+Plug 'bling/vim-airline'
+Plug 'valloric/youcompleteme'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/syntastic'
+Plug 'mhinz/vim-signify'
+Plug 'raimondi/delimitmate'
 Plug 'preservim/nerdtree'
-Plug 'junegunn/goyo.vim'
-Plug 'jreybert/vimagit'
-Plug 'vimwiki/vimwiki'
-Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'ap/vim-css-color'
+Plug 'https://github.com/navarasu/onedark.nvim'
+Plug 'vimwiki/vimwiki'
+Plug 'plasticboy/vim-markdown'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'iamcco/markdown-preview.nvim'
+Plug 'vim-scripts/indentpython.vim'
+Plug 'nvie/vim-flake8'
+Plug 'tpope/vim-surround'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'jreybert/vimagit'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf' , { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'vimoutliner/vimoutliner'
+Plug 'airblade/vim-gitgutter'
+Plug 'lukesmithxyz/vimling'
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'rip-rip/clang_complete'
+Plug 'vim-latex/vim-latex'
+Plug 'lervag/vimtex'
+Plug 'w0rp/ale'
+Plug 'sirver/ultisnips'
+Plug 'shougo/deoplete.nvim'
+Plug 'zchee/deoplete-jedi'
+Plug 'zchee/deoplete-clang'
 call plug#end()
 
-set title
-set bg=light
+colo onedark
+
+set path+=**
+set hidden
+set clipboard+=unnamed,unnamedplus
+set nocompatible
+set number relativenumber
+filetype plugin indent on
+syntax enable
+set encoding=utf-8
+set autoindent
+set noswapfile
+set nobackup
+set wildmenu
+set incsearch
+set noruler
 set go=a
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set backspace=2
+set background="dark"
+set noshowcmd
 set mouse=a
 set nohlsearch
-set clipboard+=unnamedplus
-set noshowmode
-set noruler
 set laststatus=0
-set noshowcmd
-colorscheme vim
+set noshowmode
+
+"Nvim
+let g:nord_config = {
+    \ 'style': 'dark',
+\}
+
+
+
+"Goyo
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 
 " Some basics:
 	nnoremap c "_c
